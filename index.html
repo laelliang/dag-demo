@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./dist/index.js"></script>
+  <link rel="stylesheet" href="./link_line.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    const containerDom = document.getElementById('container')
+    const container = new LinkLine.Container(containerDom)
+
+    container.setNode(data => {
+      const div = document.createElement('div')
+      div.classList.add('node')
+      div.innerText = data.id
+      return div
+    })
+    
+
+    const data = [
+      {"id":1,"pid":[],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+      {"id":2,"pid":[1],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+      {"id":3,"pid":[2],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+      {"id":4,"pid":[6,7,3,8],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+      {"id":5,"pid":[1],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+      {"id":6,"pid":[5,2],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+      {"id":7,"pid":[5],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+      {"id":8,"pid":[7],"type":1,"auditMode":2,"pass":false,"title":"审核人","condition":null},
+    ]
+
+    container.parse(data)
+
+
+
+  </script>
+</body>
+</html>

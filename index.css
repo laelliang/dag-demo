@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+
+#container {
+  width: 1000px;
+  height: 600px;
+  border: 1px solid red;
+}
+
+.node {
+
+  background-color: red;
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 6px;
+
+}
